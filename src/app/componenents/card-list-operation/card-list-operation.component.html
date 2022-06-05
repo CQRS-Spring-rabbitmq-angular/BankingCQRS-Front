@@ -1,0 +1,46 @@
+
+    <div class="card">
+      <div class="card-header border-0">
+        <div class="row align-items-center">
+          <div class="col">
+            <h3 class="mb-0">Historique Operation bancaire</h3>
+          </div>
+          <div class="col text-right">
+           
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <!-- Projects table -->
+        <table class="table align-items-center table-flush">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Date Operation</th>
+              <th scope="col">Type Operation</th>
+              <th scope="col">Montant</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="_operations">
+            <tr  *ngFor="let operation of _operations">
+              <th scope="row">
+                
+                {{operation.id}}
+              </th>
+              <td>
+                {{operation.dateoperation}}
+              </td>
+              <td>
+                {{operation.typeoperation}}
+              </td>
+              <td>
+                
+              <i [ngClass]="operation.typeoperation==='CREDIT'?'fas fa-arrow-up text-success mr-3':'fas fa-arrow-down text-warning mr-3'" ></i> <span [ngClass]="operation.typeoperation==='CREDIT'?'text-success mr-2':'text-warning mr-2'" > {{operation.amount}}</span> 
+              </td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  

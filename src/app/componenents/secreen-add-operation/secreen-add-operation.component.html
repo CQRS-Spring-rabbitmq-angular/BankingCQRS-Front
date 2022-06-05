@@ -1,0 +1,21 @@
+
+
+
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+<div class="row" *ngIf="_account">
+    <div class="col-xl-4 order-xl-2">
+<app-card-profile-account [_account]="_account.account"></app-card-profile-account>
+</div>
+<div class="col-xl-8 order-xl-1">
+    <app-card-form-operation *ngIf="OperationType" [OperationType]="OperationType" [AccountId]="_account.account.id"></app-card-form-operation>
+</div>
+</div>
+</div>
+</div>
+<div *ngIf="screenState =='Loading'" class="alert alert-sm alert-info">Loading Data ...
+
+</div>
+<div *ngIf="screenState =='Error'" class="alert alert-sm alert-warning"> {{screenState}} Loading Data  {{errorMessage}}
+
+</div>

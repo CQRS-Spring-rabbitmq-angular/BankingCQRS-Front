@@ -2,8 +2,13 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+//import { env } from "process";
+declare var _queryapiUrlg: any;
+declare var _cmdapiUrlg: any;
 export const environment = {
-  production: false
+  production: false,
+  _queryapiUrl: _queryapiUrlg || 'http://localhost:8080/Api/v1',
+  _cmdapiUrl: _cmdapiUrlg|| 'http://localhost:8081/commands/account'
 };
 
 /*
